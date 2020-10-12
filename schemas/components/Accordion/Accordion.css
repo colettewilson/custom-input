@@ -1,0 +1,145 @@
+/* Utlility classes */
+.utRelative {
+  position: relative;
+}
+
+/* base styles */
+.fieldset {
+  padding: 0;
+  border: none;
+}
+
+.fieldsetDescription {
+  display: block;
+  padding: 0;
+  margin: 0.25rem 0 0;
+  color: rgb(55, 70, 70);
+  font-size: 0.8125rem;
+}
+
+.listReset {
+  padding: 0px; 
+  list-style: none;
+}
+
+.icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: -0.16em;
+  font-size: 1.5625em;
+  line-height: 1;
+}
+
+.iconLarge {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Button styles */
+.floatingButton {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-right: 0.5rem;
+  transform: translateY(-50%);
+}
+
+.floatingButton span {
+  background-color: #e60000 !important;
+}
+
+.floatingButton:hover span,
+.floatingButton:hover::after {
+  background-color: #cc0000 !important;
+}
+
+.floatingButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 10px;
+  height: 10px;
+  background-color: #e60000;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* accordion styles */
+.accordion {
+  display: flex;
+  padding: 0.25rem 0;
+  background: white;
+  border-radius: 4px;
+}
+
+.accordionPreview {
+  margin-right: 0.25rem;
+  flex-grow: 1;
+  border-radius: 4px;
+}
+
+.accordionPreview:hover {
+  background-color: rgba(78, 100, 100, 0.1);
+}
+
+.accordionPreviewInner {
+  display: flex;
+  justify-content: space-between;
+  height: 2.5em;
+  align-items: center;
+}
+
+.accordionPreviewMedia {
+  display: flex;
+  position: relative;
+  width: 2.5em;
+  min-width: 2.5em;
+  height: 2.5em;
+  margin-right: 0.5rem;
+  overflow: hidden;
+  flex-basis: 2.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordionPreviewHeader {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.accordionPreviewTitle {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.accordionPreviewSubtitle {
+  padding: 0;
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  opacity: 0.75
+}
+
+.accordionBody {
+  position: relative;
+  box-shadow: inset 0 0 0 1px rgba(78, 100, 100, 0.25);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.accordionBody::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: white;
+  box-shadow: inset 0 0 0 1px rgba(78, 100, 100, 0.25);
+  margin-top: -7px;
+  transform: translateX(-50%) rotate(45deg);
+}
