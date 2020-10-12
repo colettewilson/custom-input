@@ -2,7 +2,7 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { FormBuilderInput } from 'part:@sanity/form-builder'
-import PatchEvent, { set, insert } from 'part:@sanity/form-builder/patch-event'
+import PatchEvent, { set, insert, unset } from 'part:@sanity/form-builder/patch-event'
 
 import styles from './Accordion.css'
 
@@ -15,11 +15,16 @@ const AccordionItem = props => {
     const { patches } = patchEvent
     const setPatch = patches.find(patch => patch.type === 'set')
     const insertPatch = patches.find(patch => patch.type === 'insert')
+    const unsetPatch = patches.find(patch => patch.type === 'unset')
 
     if (setPatch && setPatch.path.length > 0) {
       activeSection[field.name][setPatch.path] = setPatch.value
     } else if (setPatch) {
       activeSection[field.name] = setPatch.value
+    }
+
+    if (unsetPatch) {
+      activeSection[field.name] = undefined
     }
 
     if (insertPatch) {
